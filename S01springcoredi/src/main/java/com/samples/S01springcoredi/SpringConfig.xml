@@ -8,14 +8,41 @@
  http://www.springframework.org/schema/context
  http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean name="emp" class="com.samples.S01springcoredi.Employee">
-		<property name="id">
-			<value>23</value>
-		</property>
-		<property name="name">
-			<value>John</value>
+	<bean name="emp" class="com.samples.S01springcoredi.Employee"
+		p:id="22" p:name="williams" />
+
+	<bean name="hospital" class="com.samples.S01springcoredi.Hospital">
+		<property name="name" value="Global Hospitals" />
+		<property name="departments">
+			<value>Casualty</value>
 		</property>
 	</bean>
 
+	<bean name="cardealer"
+		class="com.samples.S01springcoredi.CarDealer">
+		<property name="name" value="ABC Motors" />
+		<property name="models">
+			<set>
+				<value>Hyundai</value>
+				<value>Honda</value>
+				<value>Maruti</value>
+				<value>Hyundai</value>
+			</set>
+		</property>
+	</bean>
+	
+	
+	<bean name="customer"
+		class="com.samples.S01springcoredi.Customer" p:id="37">
+		<property name="products">
+			<map>
+				<entry key="100" value="IPhone" />
+				<entry key="200" value="Laptop" />
+				<entry key="300" value="Mobile" />
+				<entry key="400" value="Mouse" />
+				<entry key="500" value="Keyboard" />
+			</map>
+		</property>
+	</bean>
 
-</beans>
+</beans>	
