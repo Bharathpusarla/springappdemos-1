@@ -70,6 +70,9 @@
 		p:scores-ref="scores" />
 
 	<bean name="patient" class="com.samples.S01springcoredi.Patient"
-		p:id="11" init-method="methodOne" destroy-method="methodTwo" />
+		p:id="11" />
+
+	<bean
+		class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
 
 </beans>	
