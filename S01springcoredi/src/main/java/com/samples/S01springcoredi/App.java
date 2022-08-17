@@ -9,10 +9,10 @@ public class App
     {
        
     	// create the spring container
-//    	ClassPathXmlApplicationContext springContainer = new ClassPathXmlApplicationContext("com/samples/S01springcoredi/SpringConfig.xml");
+    	ClassPathXmlApplicationContext springContainer = new ClassPathXmlApplicationContext("com/samples/S01springcoredi/SpringConfig.xml");
        
-//       Employee emp = (Employee) springContainer.getBean("emp"); 
-//       System.out.println(emp);
+       Employee emp = (Employee) springContainer.getBean("emp"); 
+       System.out.println(emp);
        
        
 //       Employee em1 = new Employee();
@@ -35,9 +35,9 @@ public class App
 //    	Student student = (Student) springContainer.getBean("student");
 //    	System.out.println(student);
     	
-    	AbstractApplicationContext springContainer = new ClassPathXmlApplicationContext("com/samples/S01springcoredi/SpringConfig.xml");
-    	Patient patient = (Patient) springContainer.getBean("patient");
-    	System.out.println(patient);
-    	springContainer.registerShutdownHook();
+//    	AbstractApplicationContext springContainer = new ClassPathXmlApplicationContext("com/samples/S01springcoredi/SpringConfig.xml");
+//    	Patient patient = (Patient) springContainer.getBean("patient");
+//    	System.out.println(patient);
+//    	springContainer.registerShutdownHook();
     }
 }
