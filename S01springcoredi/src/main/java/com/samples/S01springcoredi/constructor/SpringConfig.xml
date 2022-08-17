@@ -8,14 +8,23 @@
  http://www.springframework.org/schema/context
  http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean name="emp" class="com.samples.S01springcoredi.scopes.Employee"
-		p:id="22" p:name="John" scope="prototype">
-		<property name="address">
-			<bean class="com.samples.S01springcoredi.scopes.Address"
-				p:houseNumber="123" p:street="main street" p:city="NY" />
-		</property>
+	<bean name="address"
+		class="com.samples.S01springcoredi.constructor.Address"
+		p:houseNumber="123" p:street="main street" p:city="NY" />
+
+	<bean name="emp"
+		class="com.samples.S01springcoredi.constructor.Employee">
+		<constructor-arg>
+			<value>8</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>Will</value>
+		</constructor-arg>
+		<constructor-arg>
+			<ref bean="address"/>
+		</constructor-arg>
 	</bean>
-	
+
 	<context:annotation-config />
 
 </beans>	

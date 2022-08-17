@@ -1,4 +1,4 @@
-package com.samples.S01springcoredi.scopes;
+package com.samples.S01springcoredi.constructor;
 
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -8,15 +8,10 @@ public class App {
 
 		// create the spring container
 		ClassPathXmlApplicationContext springContainer = new ClassPathXmlApplicationContext(
-				"com/samples/S01springcoredi/scopes/SpringConfig.xml");
+				"com/samples/S01springcoredi/constructor/SpringConfig.xml");
 
 		Employee emp1 = (Employee) springContainer.getBean("emp");
-		System.out.println(emp1.hashCode());
+		System.out.println(emp1);
 		
-		Employee emp2 = (Employee) springContainer.getBean("emp");
-		System.out.println(emp2.hashCode());
-		
-		Employee emp3 = (Employee) springContainer.getBean("emp");
-		System.out.println(emp3.hashCode());
 	}
 }
