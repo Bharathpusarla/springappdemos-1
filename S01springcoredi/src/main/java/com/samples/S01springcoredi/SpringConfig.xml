@@ -30,10 +30,10 @@
 			</set>
 		</property>
 	</bean>
-	
-	
-	<bean name="customer"
-		class="com.samples.S01springcoredi.Customer" p:id="37">
+
+
+	<bean name="customer" class="com.samples.S01springcoredi.Customer"
+		p:id="37">
 		<property name="products">
 			<map>
 				<entry key="100" value="IPhone" />
@@ -44,5 +44,32 @@
 			</map>
 		</property>
 	</bean>
+
+	<bean name="countries"
+		class="com.samples.S01springcoredi.CountriesAndLanguages">
+		<property name="countryLanguages">
+			<props>
+				<prop key="USA">English</prop>
+				<prop key="Canada">French</prop>
+				<prop key="Germany">German</prop>
+				<prop key="Japan">Japanese</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean name="scores" class="com.samples.S01springcoredi.Scores"
+		p:math="80" p:physics="87" p:chemistry="76" />
+
+	<!-- <bean name="student" class="com.samples.S01springcoredi.Student"> <property 
+		name="scores"> <ref bean="scores" /> </property> </bean> -->
+
+	<!-- <bean name="student" class="com.samples.S01springcoredi.Student"> <property 
+		name="scores" ref="scores" /> </bean> -->
+
+	<bean name="student" class="com.samples.S01springcoredi.Student"
+		p:scores-ref="scores" />
+
+	<bean name="patient" class="com.samples.S01springcoredi.Patient"
+		p:id="11" init-method="methodOne" destroy-method="methodTwo" />
 
 </beans>	
