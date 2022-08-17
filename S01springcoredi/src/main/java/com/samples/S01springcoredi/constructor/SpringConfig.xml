@@ -3,6 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
  http://www.springframework.org/schema/beans/spring-beans.xsd
  http://www.springframework.org/schema/context
@@ -12,17 +13,13 @@
 		class="com.samples.S01springcoredi.constructor.Address"
 		p:houseNumber="123" p:street="main street" p:city="NY" />
 
+	<!-- <bean name="emp" class="com.samples.S01springcoredi.constructor.Employee"> 
+		<constructor-arg value="9" /> <constructor-arg value="Tom" /> <constructor-arg 
+		ref="address" /> </bean> -->
+
 	<bean name="emp"
-		class="com.samples.S01springcoredi.constructor.Employee">
-		<constructor-arg>
-			<value>8</value>
-		</constructor-arg>
-		<constructor-arg>
-			<value>Will</value>
-		</constructor-arg>
-		<constructor-arg>
-			<ref bean="address"/>
-		</constructor-arg>
+		class="com.samples.S01springcoredi.constructor.Employee" c:id="123"
+		c:name="Bob" c:address-ref="address">
 	</bean>
 
 	<context:annotation-config />
