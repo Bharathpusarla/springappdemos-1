@@ -10,8 +10,11 @@
 
 	<context:annotation-config />
 
-	<bean name="add" class="com.samples.S02Autowiring.model.Address"
+	<bean name="addressNY" class="com.samples.S02Autowiring.model.Address"
 		p:houseNumber="123" p:street="main street" p:city="NY" />
+
+	<bean name="addressCal" class="com.samples.S02Autowiring.model.Address"
+		p:houseNumber="987" p:street="4th Avenue" p:city="CA" />
 
 	<bean name="emp" class="com.samples.S02Autowiring.model.Employee"
 		p:id="22" p:name="John" />
