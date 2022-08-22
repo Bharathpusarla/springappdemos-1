@@ -9,11 +9,8 @@
  http://www.springframework.org/schema/context/spring-context.xsd">
 
 	
-	<bean name="dao" class="com.samples.S05InterfaceInjection.DAO.impl.OrderDAOImpl" />
+	<context:component-scan base-package="com.samples.S05InterfaceInjection" />
 	
-	<bean name="service" class="com.samples.S05InterfaceInjection.service.impl.OrderServiceImpl">
-		<property name="orderDAO" ref="dao" />
-	</bean>
-
+	
 
 </beans>	
