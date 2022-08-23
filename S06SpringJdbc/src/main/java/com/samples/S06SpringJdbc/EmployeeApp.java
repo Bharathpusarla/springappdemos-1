@@ -18,13 +18,34 @@ public class EmployeeApp
 
 		EmployeeDAO employeeDao = (EmployeeDAO) springContainer.getBean("employeedao");
 		
+		// createEmployee(employeeDao);
+		
+//		updateEmployee(employeeDao);
+		
+		deleteEmployee(employeeDao);
+		
+
+	}
+
+	private static void deleteEmployee(EmployeeDAO employeeDao) {
+		employeeDao.delete(1);
+	}
+
+	private static void updateEmployee(EmployeeDAO employeeDao) {
+		Employee emp = new Employee();
+		emp.setId(2);
+		emp.setFirstName("Bob");
+		emp.setLastName("Rockwell");
+		
+		employeeDao.update(emp);
+	}
+
+	private static void createEmployee(EmployeeDAO employeeDao) {
 		Employee emp = new Employee();
 		emp.setId(2);
 		emp.setFirstName("Dexter");
 		emp.setLastName("Johnson");
 		
 		employeeDao.create(emp);
-		
-
 	}
 }
