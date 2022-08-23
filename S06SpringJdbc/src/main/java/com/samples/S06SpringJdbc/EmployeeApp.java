@@ -22,9 +22,16 @@ public class EmployeeApp
 		
 //		updateEmployee(employeeDao);
 		
-		deleteEmployee(employeeDao);
+//		deleteEmployee(employeeDao);
+		
+		readEmployee(employeeDao);
 		
 
+	}
+
+	private static void readEmployee(EmployeeDAO employeeDao) {
+		Employee employee = employeeDao.read(2);
+		System.out.println(employee);
 	}
 
 	private static void deleteEmployee(EmployeeDAO employeeDao) {

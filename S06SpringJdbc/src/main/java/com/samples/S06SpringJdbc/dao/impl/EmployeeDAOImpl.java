@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.samples.S06SpringJdbc.dao.EmployeeDAO;
+import com.samples.S06SpringJdbc.dao.rowmapper.EmployeeRowMapper;
 import com.samples.S06SpringJdbc.dto.Employee;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
@@ -40,6 +41,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		int result = jdbcTemplate.update(sql, id);
 		System.out.println("Employee deleted");
 		return result;
+	}
+
+	@Override
+	public Employee read(int id) {
+		String sql = "select * from employee where id = ?";
+		EmployeeRowMapper mapper = new EmployeeRowMapper();
+		Employee employee = jdbcTemplate.queryForObject(sql, mapper, id);
+		return employee;
 	}
 
 }

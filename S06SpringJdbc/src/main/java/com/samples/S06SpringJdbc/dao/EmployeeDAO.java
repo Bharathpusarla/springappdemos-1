@@ -10,4 +10,6 @@ public interface EmployeeDAO {
 	
 	int delete(int id);
 	
+	Employee read(int id);
+	
 }
