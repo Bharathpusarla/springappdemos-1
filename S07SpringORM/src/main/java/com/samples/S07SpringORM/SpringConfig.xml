@@ -9,7 +9,7 @@
  http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:component-scan
-		base-package="com.samples.S07SpringORM.Dao.impl" />
+		base-package="com.samples.S07SpringORM.Dao.Impl" />
 
 	<bean name="datasource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
