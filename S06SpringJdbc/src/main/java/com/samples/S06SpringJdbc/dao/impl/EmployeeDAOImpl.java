@@ -10,7 +10,7 @@ import com.samples.S06SpringJdbc.dao.EmployeeDAO;
 import com.samples.S06SpringJdbc.dao.rowmapper.EmployeeRowMapper;
 import com.samples.S06SpringJdbc.dto.Employee;
 
-@Component
+@Component("employeedao")
 public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Autowired
