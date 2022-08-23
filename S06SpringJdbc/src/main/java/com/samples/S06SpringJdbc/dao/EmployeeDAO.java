@@ -1,5 +1,7 @@
 package com.samples.S06SpringJdbc.dao;
 
+import java.util.List;
+
 import com.samples.S06SpringJdbc.dto.Employee;
 
 public interface EmployeeDAO {
@@ -11,5 +13,7 @@ public interface EmployeeDAO {
 	int delete(int id);
 	
 	Employee read(int id);
+	
+	List<Employee> read();
 	
 }

@@ -18,8 +18,6 @@
 		class="org.springframework.jdbc.core.JdbcTemplate"
 		p:dataSource-ref="datasource" />
 
-	<bean name="employeedao"
-		class="com.samples.S06SpringJdbc.dao.impl.EmployeeDAOImpl"
-		p:jdbcTemplate-ref="jdbctemplate" />
+	<context:component-scan base-package="com.samples.S06SpringJdbc.dao.impl" />
 
 </beans>	

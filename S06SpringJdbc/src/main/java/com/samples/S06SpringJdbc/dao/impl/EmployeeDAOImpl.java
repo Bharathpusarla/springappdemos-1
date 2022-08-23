@@ -1,23 +1,20 @@
 package com.samples.S06SpringJdbc.dao.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
 import com.samples.S06SpringJdbc.dao.EmployeeDAO;
 import com.samples.S06SpringJdbc.dao.rowmapper.EmployeeRowMapper;
 import com.samples.S06SpringJdbc.dto.Employee;
 
+@Component
 public class EmployeeDAOImpl implements EmployeeDAO {
 
+	@Autowired
 	private JdbcTemplate jdbcTemplate;
-
-	public JdbcTemplate getJdbcTemplate() {
-		return jdbcTemplate;
-	}
-
-	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
-		this.jdbcTemplate = jdbcTemplate;
-	}
 
 	@Override
 	public int create(Employee emp) {
@@ -49,6 +46,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		EmployeeRowMapper mapper = new EmployeeRowMapper();
 		Employee employee = jdbcTemplate.queryForObject(sql, mapper, id);
 		return employee;
+	}
+
+	@Override
+	public List<Employee> read() {
+		String sql = "select * from employee";
+		EmployeeRowMapper mapper = new EmployeeRowMapper();
+		List<Employee> employees = jdbcTemplate.query(sql, mapper);
+		return employees;
 	}
 
 }

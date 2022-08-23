@@ -1,5 +1,7 @@
 package com.samples.S06SpringJdbc;
 
+import java.util.List;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -18,15 +20,22 @@ public class EmployeeApp
 
 		EmployeeDAO employeeDao = (EmployeeDAO) springContainer.getBean("employeedao");
 		
-		// createEmployee(employeeDao);
+//		 createEmployee(employeeDao);
 		
 //		updateEmployee(employeeDao);
 		
 //		deleteEmployee(employeeDao);
 		
-		readEmployee(employeeDao);
+//		readEmployee(employeeDao);
+		
+		readAllEmployees(employeeDao);
 		
 
+	}
+
+	private static void readAllEmployees(EmployeeDAO employeeDao) {
+		List<Employee> employees = employeeDao.read();
+		System.out.println(employees);
 	}
 
 	private static void readEmployee(EmployeeDAO employeeDao) {
@@ -49,9 +58,9 @@ public class EmployeeApp
 
 	private static void createEmployee(EmployeeDAO employeeDao) {
 		Employee emp = new Employee();
-		emp.setId(2);
-		emp.setFirstName("Dexter");
-		emp.setLastName("Johnson");
+		emp.setId(5);
+		emp.setFirstName("Max");
+		emp.setLastName("Miller");
 		
 		employeeDao.create(emp);
 	}
