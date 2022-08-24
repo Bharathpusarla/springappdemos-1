@@ -16,6 +16,35 @@ public class App {
 
 		ProductDAO productDAO = (ProductDAO) springContainer.getBean("productdao");
 		
+//		create(productDAO);
+		
+//		update(productDAO);
+		
+//		delete(productDAO);
+		
+	}
+
+	private static void delete(ProductDAO productDAO) {
+		Product product = new Product();
+		product.setId(1);
+		product.setName("Furniture");
+		product.setDescription("rose wood");
+		product.setPrice(6000);
+		
+		productDAO.delete(product);
+	}
+
+	private static void update(ProductDAO productDAO) {
+		Product product = new Product();
+		product.setId(1);
+		product.setName("Furniture");
+		product.setDescription("rose wood");
+		product.setPrice(6000);
+		
+		productDAO.update(product);
+	}
+
+	private static void create(ProductDAO productDAO) {
 		Product product = new Product();
 		product.setId(1);
 		product.setName("Furniture");
