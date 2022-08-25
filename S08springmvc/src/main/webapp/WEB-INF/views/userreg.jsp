@@ -10,7 +10,7 @@
 
 	<h2>User Registration</h2>
 
-	<form action="registeruser" method="post">
+	<form action="registeruser">
 		<pre>
 		Id: <input type="text" name="id" />
 		Name: <input type="text" name="name" />
